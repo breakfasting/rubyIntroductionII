@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def same_char_collapse(str)
   # while collapsible
   # iterate through the string
@@ -8,21 +10,19 @@ def same_char_collapse(str)
   while collapsible
     collapsible = false
     i = 1
-    while i < str.length #zzzxaaxy
+    while i < str.length # zzzxaaxy
       if str[i] == str[i - 1]
-        str = str[0...i - 1] + str[i + 1..-1] #zxaaxy
+        str = str[0...i - 1] + str[i + 1..-1] # zxaaxy
         collapsible = true
       end
       i += 1
     end
-    if !collapsible
-      return str
-    end
+    return str unless collapsible
   end
 end
 
-puts same_char_collapse("zzzxaaxy")   #=> "zy"
+puts same_char_collapse('zzzxaaxy') #=> "zy"
 # because zzzxaaxy -> zxaaxy -> zxxy -> zy
 
-puts same_char_collapse("uqrssrqvtt") #=> "uv"
+puts same_char_collapse('uqrssrqvtt') #=> "uv"
 # because uqrssrqvtt -> uqrrqvtt -> uqqvtt -> uvtt -> uv

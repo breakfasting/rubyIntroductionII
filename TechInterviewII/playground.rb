@@ -1,4 +1,6 @@
-str = "abcde"
-# testing rubocop
+# frozen_string_literal: true
 
-puts str[0...0]
+str = 'abcde'
+# testing rubocop sd
+
+puts str[0...1]
